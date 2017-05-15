@@ -14,7 +14,9 @@ var helpers = {
     var trackWidth = this.getWidth(ReactDOM.findDOMNode(this.track));
     var slideWidth;
 
-    if (!props.vertical) {
+    if (this.props.slideFixedWidth) {
+      slideWidth = this.props.slideFixedWidth;
+    } else if (!props.vertical) {
       var centerPaddingAdj = props.centerMode && (parseInt(props.centerPadding) * 2);
       slideWidth = (this.getWidth(ReactDOM.findDOMNode(this)) - centerPaddingAdj)/props.slidesToShow;
     } else {
@@ -57,7 +59,9 @@ var helpers = {
     var trackWidth = this.getWidth(ReactDOM.findDOMNode(this.track));
     var slideWidth;
 
-    if (!props.vertical) {
+    if (this.props.slideFixedWidth) {
+      slideWidth = this.props.slideFixedWidth;
+    } else if (!props.vertical) {
       var centerPaddingAdj = props.centerMode && (parseInt(props.centerPadding) * 2);
       slideWidth = (this.getWidth(ReactDOM.findDOMNode(this)) - centerPaddingAdj)/props.slidesToShow;
     } else {
